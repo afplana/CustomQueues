@@ -4,8 +4,6 @@
  *  Description:
  **************************************************************************** */
 
-import edu.princeton.cs.algs4.StdOut;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -87,68 +85,6 @@ public class Deque<Item> implements Iterable<Item> {
     // return an iterator over items in order from front to back
     public Iterator<Item> iterator() {
         return new DequeItr();
-    }
-
-    public static void main(String[] args) {
-        Deque<String> deque = new Deque<>();
-        StdOut.println(deque.isEmpty());
-        StdOut.println(deque.size());
-
-        // Add and remove from last
-        deque.addLast("Node_1");
-        deque.addLast("Node_2");
-        deque.addLast("Node_3");
-        deque.addLast("Node_4");
-        deque.addLast("Node_5");
-        deque.addLast("Node_5");
-        deque.addLast("Node_6");
-        deque.addLast("Node_7");
-        StdOut.println(deque.size());
-
-        for (String s : deque) {
-            try {
-                deque.iterator().remove();
-            }
-            catch (UnsupportedOperationException e) {
-                StdOut.print(s);
-            }
-        }
-
-        StdOut.println(deque.removeFirst());
-        StdOut.println(deque.removeFirst());
-        StdOut.println(deque.removeFirst());
-        StdOut.println(deque.removeFirst());
-        StdOut.println(deque.removeFirst());
-        StdOut.println(deque.removeFirst());
-        StdOut.println(deque.removeFirst());
-
-        // Add and remove from first
-        deque.addFirst("Node_1");
-        deque.addFirst("Node_2");
-        deque.addFirst("Node_3");
-        deque.addFirst("Node_4");
-        deque.addFirst("Node_5");
-        deque.addFirst("Node_6");
-        deque.addFirst("Node_7");
-        StdOut.println(deque.size());
-
-        for (String s : deque) {
-            try {
-                deque.iterator().remove();
-            }
-            catch (UnsupportedOperationException e) {
-                StdOut.print(s);
-            }
-        }
-        StdOut.println(deque.removeLast());
-        StdOut.println(deque.removeLast());
-        StdOut.println(deque.removeLast());
-        StdOut.println(deque.removeLast());
-        StdOut.println(deque.removeLast());
-        StdOut.println(deque.removeLast());
-        StdOut.println(deque.removeLast());
-        StdOut.println(deque.removeLast());
-        StdOut.println(deque.size());
     }
 
     private class DequeItr implements Iterator<Item> {

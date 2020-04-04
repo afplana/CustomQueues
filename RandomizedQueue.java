@@ -4,7 +4,6 @@
  *  Description:
  **************************************************************************** */
 
-import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Iterator;
@@ -58,27 +57,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     // return an independent iterator over items in random order
     public Iterator<Item> iterator() {
         return new RandomizedQueueItr();
-    }
-
-    // unit testing (required)
-    public static void main(String[] args) {
-        RandomizedQueue<String> r = new RandomizedQueue<>();
-
-        StdOut.println(r.size());
-        StdOut.println();
-        r.enqueue("NODE_1");
-        r.enqueue("NODE_2");
-        r.enqueue("NODE_3");
-        r.enqueue("NODE_4");
-        r.enqueue("NODE_5");
-
-        StdOut.println(r.size());
-
-        StdOut.println(r.sample());
-
-        StdOut.println(r.dequeue());
-
-        StdOut.println(r.size());
     }
 
     // Remove a provided node
